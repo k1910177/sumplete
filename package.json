@@ -1,0 +1,38 @@
+{
+  "name": "sumplete",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "ts-node ./utils/ptau.ts",
+    "compile": "hardhat compile",
+    "localnode": "hardhat node --no-deploy",
+    "circom:dev": "hardhat circom --deterministic --debug --verbose",
+    "circom:prod": "hardhat circom --verbose",
+    "test": "hardhat test",
+    "script": "hardhat run",
+    "clean:circom": "rimraf circuits/out",
+    "clean:hh": "rimraf artifacts cache types",
+    "clean": "npm-run-all clean:circom clean:hh"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.4.2"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.2",
+    "ffjavascript": "^0.2.59",
+    "hardhat": "^2.14.0",
+    "hardhat-circom": "^3.3.2",
+    "hardhat-deploy": "^0.11.29",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.1",
+    "snarkjs": "^0.7.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

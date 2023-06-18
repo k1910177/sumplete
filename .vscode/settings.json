@@ -1,0 +1,20 @@
+{
+  "search.exclude": {
+    "node_modules": true,
+    "artifacts": true,
+    "cache": true,
+    "types": true,
+    "circuits/*.ptau": true,
+    "circuits/out": true,
+    "deployments": true
+  },
+  "files.exclude": {
+    "node_modules": true,
+    "artifacts": true,
+    "cache": true,
+    "types": true,
+    "circuits/*.ptau": true,
+    "circuits/out": true,
+  },
+  "solidity.compileUsingRemoteVersion": "v0.6.12"
+}

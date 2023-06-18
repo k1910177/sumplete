@@ -1,0 +1,20 @@
+# node
+node_modules
+.env
+
+# hardhat
+cache
+artifacts
+types
+
+# hardhat deploy
+deployments/localhost
+deployments/hardhat
+
+# Ignore the output from circom because we want people to build these
+# Users can remove these lines and commit the artifacts
+circuits/out
+*Verifier.sol
+*.ptau
+
+.DS_Store

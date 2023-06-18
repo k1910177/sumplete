@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sumplete</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A math logic puzzle game created in collaboration with artifical intelligence (ChatGPT)"
+    />
+    <meta charset="UTF-8" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#f5f5f5" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="update-modal" class="modal hidden" data-update="5"></div>
+
+    <div class="container">
+      <div class="two-col-layout">
+        <div>
+          <h1 id="h1">Sumplete</h1>
+          <div id="instructions" class="instructions">
+            Delete numbers so each row/column adds up to the target number at
+            the right/bottom. <a href="https://sumplete.com/">Learn more</a>.
+          </div>
+          <div id="loadgame">
+            <div id="puzzlenum"></div>
+            <div class="grid" id="grid"></div>
+            <div class="controls">
+              <button id="mistakes">Check</button>
+              <button id="hint">Hint</button>
+              <button id="restart">Clear</button>
+              <button id="reveal">Reveal</button>
+              <button id="undo" disabled>Undo</button>
+              <button id="remove" class="hidden">Remove Mistakes</button>
+            </div>
+            <h2 class="complete hidden">Puzzle solved! Well done</h2>
+            <h2 class="revealed hidden">Better luck next time!</h2>
+          </div>
+          <div class="new">
+            <select id="size" onchange="sizechanged()">
+              <option value="3">3x3</option>
+              <!-- <option value="4">4x4</option>
+              <option value="5">5x5</option>
+              <option value="6">6x6</option>
+              <option value="7">7x7</option>
+              <option value="8">8x8</option>
+              <option value="9">9x9</option> -->
+            </select>
+            <select id="level">
+              <option value="1">easy</option>
+              <option value="2">medium</option>
+              <option value="3">hard</option>
+              <option value="4">expert</option>
+            </select>
+            <button id="new">New puzzle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <div class="example-row">
+        <div class="grid-wrapper">
+          <div class="grid" id="example-row-1" data-size="3"></div>
+        </div>
+      </div>
+      <div class="example-row">
+        <div class="grid-wrapper">
+          <div class="grid" id="example-row-2" data-size="3"></div>
+        </div>
+      </div>
+
+      <div class="grid" id="winning-sumplete-example-grid" data-size="3"></div>
+    </div>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/snarkjs@0.7.0/build/snarkjs.min.js"></script>
+    <script src="app.js"></script>
+    <script src="verify.js"></script>
+  </body>
+</html>
